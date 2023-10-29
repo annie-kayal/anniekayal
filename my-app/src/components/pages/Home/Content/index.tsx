@@ -15,6 +15,7 @@ export const Content = ({ activeTab }: ContentProps): ReactElement => {
       sx={{
         display: ["none", null, null, null, "block"],
         gridColumn: "1 / span 10",
+        gridRow: "2 / span 4",
       }}
     >
       <Box

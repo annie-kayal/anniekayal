@@ -1,6 +1,7 @@
 import { useTheme } from "styled-components";
 import React, { ReactElement } from "react";
-import { Box, Heading, Text } from "theme-ui";
+import { Box, Heading, Text, Link } from "theme-ui";
+import { paths } from "../../../constants/paths";
 
 export const IntroductionSummary = (): ReactElement => {
   const theme = useTheme();
@@ -32,7 +33,7 @@ export const IntroductionSummary = (): ReactElement => {
         sx={{
           fontSize: 4,
           color: "primary",
-          letterSpacing: theme.spacing[1],
+          letterSpacing: 1,
         }}
         as="p"
       >
@@ -74,16 +75,25 @@ export const IntroductionSummary = (): ReactElement => {
         applications. I am currently building exciting features to drive
         customer retention and tackling re-building the internal administrative
         portal at
-        <span
-          style={{
-            fontSize: theme.fontSizes[3],
-            color: theme.colors.paleBlue,
+        <Link
+          sx={{
+            fontSize: 4,
+            color: "paleBlue",
+            textDecoration: "none",
           }}
+          href={paths.MINDFUL_CHEF}
         >
           {" "}
           Mindful Chef
-        </span>
+        </Link>
         .
+      </Text>
+
+      <Text
+        as="p"
+        sx={{ fontSize: 3, fontFamily: "body", color: "brown", mt: 3 }}
+      >
+        Currently: Challenging myself to develop an application using Golang.
       </Text>
     </Box>
   );

@@ -31,13 +31,23 @@ export const Navigation = ({
 }: NavigationProps): ReactElement => {
   return (
     <AnimatedList
-      initial={{ height: 0 }}
-      animate={{ height: "100%" }}
+      initial={{ height: 0, width: 0 }}
+      animate={{
+        height: "100%",
+        width: "100%",
+        borderTop: `1px solid ${theme.colors.paleBlue}`,
+      }}
       transition={{ duration: 2 }}
     >
       <NavigationTab
         label="01. ABOUT"
-        style={{ gridRow: "2", gridColumn: "1", alignSelf: "start" }}
+        style={{
+          gridRow: "1",
+          gridColumn: "1 / span 2",
+          alignSelf: "start",
+          marginTop: theme.spacing?.[1],
+          width: "fit-content",
+        }}
         onClick={() => setActiveTab("about-me")}
         activeTab={activeTab}
         id="about-me"
@@ -47,7 +57,7 @@ export const Navigation = ({
         label="02. EXPERIENCE"
         style={{
           gridColumn: "1",
-          gridRow: "2",
+          gridRow: "1",
           alignSelf: "center",
           width: "fit-content",
         }}
@@ -60,7 +70,7 @@ export const Navigation = ({
         label="03. CONTACT"
         style={{
           gridColumn: "1",
-          gridRow: "2",
+          gridRow: "1",
           alignSelf: "end",
           width: "fit-content",
         }}
